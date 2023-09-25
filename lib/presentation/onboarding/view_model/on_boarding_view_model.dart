@@ -53,7 +53,9 @@ class OnBoardingViewModel extends BaseViewModel implements OnBoardingViewModelIn
 
   @override
   // TODO: implement outputSliderViewObject
-  Stream get outputSliderViewObject => streamController.stream.map((SliderViewObject) =>SliderViewObject);
+  Stream<SliderViewObject> get outputSliderViewObject =>
+      streamController.stream.map((sliderViewObject) => sliderViewObject);
+
 
   List<SliderObject> _getSliderData() => [
     const SliderObject(AppString.onBoardingTitle1,

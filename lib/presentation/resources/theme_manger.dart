@@ -79,7 +79,6 @@ ThemeData getAppTheme() {
         errorStyle:getRegularStyle(
             color: ColorManger.error),
 
-
         enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(
               color: ColorManger.gray,
@@ -88,7 +87,7 @@ ThemeData getAppTheme() {
             borderRadius: BorderRadius.all(Radius.circular(AppSize.s8))),
         focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(
-              color: ColorManger.gray,
+              color: ColorManger.primary,
               width: AppSize.s1_5,
             ),
             borderRadius: BorderRadius.all(Radius.circular(AppSize.s8))),

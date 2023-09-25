@@ -10,9 +10,23 @@ class AppString{
   static const onBoardingSubTitle3="Tut app is an awesome flutter application using clean architecture #3";
   static const onBoardingSubTitle4="Tut app is an awesome flutter application using clean architecture #4";
   static const skip="Skip";
-  static const String success = "success";
+  static const username = "Username";
+  static const password = "Password";
+  static const usernameError = "Please Enter Your Username";
+  static const passwordError = "Please Enter Your password";
+  static const login = "Login";
+  static const forgetPassword = "Forgot password";
+  static const registerText = "Not a member ? Sign up";
+  static const loading = "loading...";
+  static const retryAgain = "Retry again";
+  static const ok = "ok";
+  static const String emailHint = 'email hint';
+  static const String invalidEmail = "email error";
+  static const String resetPassword = "reset password";
+  static const String userNameInvalid = "username hint message";
 
   // error handler
+  static const String success = "success";
   static const String badRequestError = "bad_request_error";
   static const String noContent = "no_content";
   static const String forbiddenError = "forbidden_error";
