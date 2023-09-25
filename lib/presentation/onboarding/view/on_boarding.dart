@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tut_app/app/app_prefs.dart';
 import 'package:tut_app/domain/model/model.dart';
 import 'package:tut_app/presentation/resources/Color_Manger.dart';
 import 'package:tut_app/presentation/resources/Strings_Manger.dart';
 import 'package:tut_app/presentation/resources/constants_manger.dart';
 import 'package:tut_app/presentation/resources/image_manger.dart';
 import 'package:tut_app/presentation/resources/values_manger.dart';
+import '../../../app/di.dart';
 import '../../resources/routes_manger.dart';
 import '../view_model/on_boarding_view_model.dart';
 
@@ -21,8 +23,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
   final PageController _pageController = PageController();
   final OnBoardingViewModel onBoardingViewModel =OnBoardingViewModel();
+  final AppPreferences _appPreferences =instance<AppPreferences>();
 
   _bind(){
+    _appPreferences.setOnBoardingScreenViewed();
     onBoardingViewModel.start();
   }
 
@@ -46,7 +50,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     });
   }
 
-  Widget _getContentWidget(SliderViewObject sliderViewObject){
+  Widget _getContentWidget(SliderViewObject? sliderViewObject){
     if (sliderViewObject!=null){
       return Scaffold(
         backgroundColor: ColorManger.white,
@@ -73,6 +77,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {
+                    _appPreferences.setOnBoardingScreenViewed();
                     Navigator.pushReplacementNamed(context, Routes.loginRoute);
                   },
                   child: Text(

@@ -31,8 +31,9 @@ class DioFactory {
       receiveTimeout: const Duration(seconds: Constance.apiTimeOut),
       sendTimeout: const Duration(seconds: Constance.apiTimeOut),
     );
-    if (!kDebugMode) {
-      dio.interceptors.add(PrettyDioLogger(
+    if (kDebugMode) {
+      dio.interceptors.add(
+          PrettyDioLogger(
         requestHeader: true,
         requestBody: true,
         responseHeader: true,
