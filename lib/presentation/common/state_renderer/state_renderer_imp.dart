@@ -67,7 +67,7 @@ class SuccessState extends StateFlow {
   String getMessage() => message;
 
   @override
-  StateRendererType getStateRendererType() => StateRendererType.popupSuccess;
+  StateRendererType getStateRendererType() => StateRendererType.popupSuccessState;
 }
 
 
@@ -121,8 +121,10 @@ extension StateFlowExtension on StateFlow {
           dismissDialog(context);
 
           // show popup
-          showPopUp(context, StateRendererType.popupSuccess, getMessage(),
-             title : AppString.success);
+          showPopUp(
+              context, StateRendererType.popupSuccessState,
+              getMessage(),
+              title : AppString.success);
           // return content ui of the screen
           return contentScreenWidget;
         }

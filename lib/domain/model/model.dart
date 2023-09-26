@@ -1,18 +1,14 @@
 import 'package:equatable/equatable.dart';
 
-class SliderObject  extends Equatable{
+class SliderObject extends Equatable {
   final String title;
   final String subTitle;
   final String image;
 
- const SliderObject(this.title, this.subTitle, this.image);
+  const SliderObject(this.title, this.subTitle, this.image);
 
   @override
-  List<Object> get props => [
-    title,
-    subTitle,
-    image
-  ];
+  List<Object> get props => [title, subTitle, image];
 }
 
 class SliderViewObject extends Equatable {
@@ -20,70 +16,70 @@ class SliderViewObject extends Equatable {
   final int numOfSliders;
   final int currentIndex;
 
- const SliderViewObject(this.sliderObject,this.numOfSliders,this.currentIndex);
+  const SliderViewObject(
+      this.sliderObject, this.numOfSliders, this.currentIndex);
 
   @override
   List<Object?> get props => [
-    sliderObject,
-    numOfSliders,
-    currentIndex,
-  ];
-
+        sliderObject,
+        numOfSliders,
+        currentIndex,
+      ];
 }
 
+class Customer extends Equatable {
+  final String id;
+  final String name;
+  final int numOfNotification;
 
-
-class Customer extends Equatable{
- final String id;
- final String name;
- final int numOfNotification;
- const Customer({required this.id,required this.name,required this.numOfNotification});
-
+  const Customer(
+      {required this.id, required this.name, required this.numOfNotification});
 
   @override
   List<Object> get props => [
-    id,
-    name,
-    numOfNotification,
-  ];
-
-
+        id,
+        name,
+        numOfNotification,
+      ];
 }
 
-
-
-class Contacts extends Equatable{
-
+class Contacts extends Equatable {
   final String phone;
   final String email;
   final String link;
-  const Contacts({required this.phone,required this.email,required this.link});
+
+  const Contacts(
+      {required this.phone, required this.email, required this.link});
 
   @override
   List<Object> get props => [
-    phone,
-    email,
-    link,
-  ];
-
-
+        phone,
+        email,
+        link,
+      ];
 }
 
-
-
-class Authentication extends Equatable{
-
+class Authentication extends Equatable {
   final Customer? customer;
   final Contacts? contacts;
 
-  const Authentication({required this.customer,required this.contacts});
+  const Authentication({required this.customer, required this.contacts});
 
   @override
   List<Object?> get props => [
-    customer,
-    contacts,
-  ];
-
-
+        customer,
+        contacts,
+      ];
 }
 
+class ForgetPassword extends Equatable {
+  final String support;
+
+  const ForgetPassword(
+      {required this.support});
+
+  @override
+  List<Object> get props => [
+        support,
+      ];
+}
