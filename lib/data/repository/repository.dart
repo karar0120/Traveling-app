@@ -35,4 +35,23 @@ class RepositoryImpl implements Repository {
       return left(DataSource.INTERNAL_SERVER_ERROR.getFailure());
     }
   }
+
+  @override
+  Future<Either<Failure, ForgetPassword>> forgetPassword(ForgetPasswordRequests forgetPasswordRequests) async{
+    if (await networkInfo.isConnected) {
+      try{
+        final response = await remoteDataSource.forgetPassword(forgetPasswordRequests);
+        if (response.status==ApiInternalStatus.SUCCESS){
+          return right(response.toDomain());
+        }else {
+          return left(Failure(message:response.message ?? ResponseMessage.DEFAULT,
+              statusCode: ApiInternalStatus.FAILURE ));
+        }
+      }catch (error){
+        return left(ErrorHandler.handle(error).failure);
+      }
+    }else {
+      return left(DataSource.INTERNAL_SERVER_ERROR.getFailure());
+    }
+  }
 }

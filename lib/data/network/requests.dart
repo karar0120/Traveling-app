@@ -13,3 +13,13 @@ class LoginRequests extends Equatable{
 
 
 }
+
+class ForgetPasswordRequests extends Equatable {
+  final String email;
+ const ForgetPasswordRequests ({required this.email});
+
+  @override
+  List<Object?> get props => [
+    email,
+  ];
+}

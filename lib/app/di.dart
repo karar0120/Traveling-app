@@ -12,6 +12,9 @@ import 'package:tut_app/domain/repository/repository.dart';
 import 'package:tut_app/domain/use_case/login_use_case.dart';
 import 'package:tut_app/presentation/login/view_model/login_view_model.dart';
 
+import '../domain/use_case/forget_password_use_case.dart';
+import '../presentation/forget_password/view_model/forget_password_view_model.dart';
+
 final instance = GetIt.instance;
 
 Future<void> initAppModule() async {
@@ -44,5 +47,15 @@ Future<void >initLoginModule() async{
 
     instance.registerFactory<LoginViewModel>(() =>
         LoginViewModel(loginUseCase: instance()));
+  }
+}
+Future<void >initForgetModule() async{
+
+  if (!GetIt.I.isRegistered<ForgetPasswordUseCase>()) {
+    instance.registerFactory<ForgetPasswordUseCase>(() =>
+        ForgetPasswordUseCase(repository: instance()));
+
+    instance.registerFactory<ForgetPasswordViewModel>(() =>
+        ForgetPasswordViewModel(forgetPasswordUseCase: instance()));
   }
 }

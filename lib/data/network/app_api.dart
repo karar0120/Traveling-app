@@ -19,4 +19,11 @@ abstract class AppServiceClient{
   String password,
   );
 
+  @POST(Constance.pathForgetPassword)
+
+  Future<ForgetPasswordResponse> forgetPassword (
+      @Field('email')
+      String email,
+  );
+
 }
