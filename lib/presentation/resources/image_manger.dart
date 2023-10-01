@@ -11,6 +11,7 @@ class ImageManger{
   static const String arrowRight="$imagePath/arrow_right.svg";
   static const String solidCircle="$imagePath/solid_circle.svg";
   static const String hollowCircle="$imagePath/hollow_circle.svg";
+  static const String profilePicture="$imagePath/photo-camera.svg";
 }
 
 class JsonAssets {

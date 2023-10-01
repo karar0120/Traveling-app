@@ -25,5 +25,20 @@ abstract class AppServiceClient{
       @Field('email')
       String email,
   );
+  @POST(Constance.pathRegister)
+  Future <AuthenticationResponse> register(
+  @Field('user_name')
+  String userName,
+  @Field('country_mobile_code')
+  String countryMobileCode,
+  @Field('mobile_number')
+  String mobileNumber,
+  @Field('email')
+  String email,
+  @Field('password')
+  String password,
+  @Field('profile_picture')
+  String profilePicture,
+  );
 
 }
