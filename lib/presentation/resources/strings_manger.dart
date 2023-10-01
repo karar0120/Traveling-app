@@ -16,15 +16,18 @@ class AppString{
   static const emailError = "Please Enter Your Email";
   static const passwordError = "Please Enter Your password";
   static const login = "Login";
+  static const register = "Register";
   static const forgetPassword = "Forgot password";
   static const registerText = "Not a member ? Sign up";
   static const loading = "loading...";
   static const retryAgain = "Retry again";
   static const ok = "ok";
   static const String emailHint = 'email';
-  static const String invalidEmail = "email error";
+  static const String invalidEmail = "email format is wrong";
   static const String resetPassword = "Reset password";
-  static const String userNameInvalid = "username hint message";
+  static const String userNameInvalid = "user name should  be at least 8 chars";
+  static const String mobileNumberInvalid = "mobile number should  be at least 10 digits";
+  static const String passwordInvalid = "password should  be at least 6 chars";
 
   // error handler
   static const String success = "success";
@@ -40,6 +43,9 @@ class AppString{
   static const String defaultError = "default_error";
   static const String cacheError = "cache_error";
   static const String noInternetError = "no_internet_error";
-
-
+  static const String alreadyHaveAccount='Already have an account? Login';
+  static const String mobileNumber='Mobile Number';
+  static const String profilePicture='Profile Picture';
+  static const String photoGallery ='Photo Gallery';
+  static const String photoCamera ='Photo Camera';
 }

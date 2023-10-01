@@ -8,5 +8,5 @@ abstract class Repository{
   Future<Either<Failure,Authentication>>login(LoginRequests loginRequests);
 
   Future<Either<Failure,ForgetPassword>>forgetPassword(ForgetPasswordRequests forgetPasswordRequests );
-
+  Future <Either<Failure,Authentication>>register(RegisterRequests registerRequests);
 }
