@@ -48,4 +48,10 @@ class AppString{
   static const String profilePicture='Profile Picture';
   static const String photoGallery ='Photo Gallery';
   static const String photoCamera ='Photo Camera';
+  static const String home ='Home';
+  static const String search='Search';
+  static const String notification='Notification';
+  static const String settings='settings';
+  static const String service='Services';
+  static const String store='Stores';
 }

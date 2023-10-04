@@ -83,3 +83,67 @@ class ForgetPassword extends Equatable {
         support,
       ];
 }
+
+class Service extends Equatable {
+  final int id;
+  final String title;
+  final String image;
+  const Service({required this.id,required this.title,required this.image});
+
+  @override
+  List<Object?> get props =>[
+    id,
+    title,
+    image,
+  ];
+}
+class BannerAd extends Equatable {
+  final int id;
+  final String title;
+  final String image;
+  const BannerAd({required this.id,required this.title,required this.image});
+
+  @override
+  List<Object?> get props =>[
+    id,
+    title,
+    image,
+  ];
+}
+
+class Store extends Equatable {
+  final int id;
+  final String title;
+  final String image;
+  const Store({required this.id,required this.title,required this.image});
+
+  @override
+  List<Object?> get props =>[
+    id,
+    title,
+    image,
+  ];
+}
+
+class DataHome extends Equatable {
+  final List<Service>service;
+  final List<BannerAd> banner;
+  final List<Store> store;
+  const DataHome({required this.service,required this.banner,required this.store});
+
+  @override
+  List<Object?> get props =>[
+    service,
+    banner,
+    store,
+  ];
+}
+class Home extends Equatable{
+  final DataHome data;
+  const Home({required this.data});
+
+  @override
+  List<Object?> get props => [
+    data
+  ];
+}

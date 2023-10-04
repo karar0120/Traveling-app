@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:tut_app/data/network/requests.dart';
 import 'package:tut_app/domain/use_case/forget_password_use_case.dart';
 import 'package:tut_app/presentation/base/base_view_model.dart';
 import 'package:tut_app/presentation/common/state_renderer/state_renderer.dart';
