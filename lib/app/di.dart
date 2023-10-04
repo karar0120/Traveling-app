@@ -13,9 +13,12 @@ import 'package:tut_app/domain/repository/repository.dart';
 import 'package:tut_app/domain/use_case/login_use_case.dart';
 import 'package:tut_app/domain/use_case/register_use_case.dart';
 import 'package:tut_app/presentation/login/view_model/login_view_model.dart';
+import 'package:tut_app/presentation/main/pages/home/view_model/home_view_model.dart';
 import 'package:tut_app/presentation/register/view_model/register_view_model.dart';
 
+import '../data/data_source/local_data_source.dart';
 import '../domain/use_case/forget_password_use_case.dart';
+import '../domain/use_case/home_use_case.dart';
 import '../presentation/forget_password/view_model/forget_password_view_model.dart';
 
 final instance = GetIt.instance;
@@ -41,8 +44,12 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<RemoteDataSource>(
       () => RemoteDataSourceImpl(appServiceClient: instance()));
 
+
+  instance.registerLazySingleton<LocalDataSource>(
+          () => LocalDataSourceImp());
+
   instance.registerLazySingleton<Repository>(() =>
-      RepositoryImpl(networkInfo: instance(), remoteDataSource: instance()));
+      RepositoryImpl(networkInfo: instance(), remoteDataSource: instance(),localDataSource: instance()));
 }
 
 Future<void> initLoginModule() async {
@@ -73,5 +80,14 @@ Future<void> initRegisterModule() async {
         () => RegisterViewModel(registerUseCase: instance()));
     instance.registerFactory<ImagePicker>(
             () => ImagePicker());
+  }
+}
+
+Future<void> initHomeModule() async {
+  if (!GetIt.I.isRegistered<RegisterUseCase>()) {
+    instance.registerFactory<GetHomeDataUseCase>(
+            () => GetHomeDataUseCase(repository: instance()));
+    instance.registerFactory<HomeViewModel>(
+            () => HomeViewModel(getHomeDataUseCase: instance()));
   }
 }

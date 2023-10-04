@@ -61,10 +61,12 @@ ThemeData getAppTheme() {
         titleSmall:
         getRegularStyle(color: ColorManger.white, fontSize: FontSizeManger.s16),
         bodyLarge: getRegularStyle(color: ColorManger.grey1),
-        bodySmall: getRegularStyle(color: ColorManger.gray),
+        bodySmall: getRegularStyle(color: ColorManger.grey2,fontSize: FontSizeManger.s12),
         bodyMedium: getRegularStyle(color: ColorManger.grey2, fontSize: FontSizeManger.s12),
         labelSmall:
-        getBoldStyle(color: ColorManger.primary, fontSize: FontSizeManger.s12)),
+        getBoldStyle(color: ColorManger.primary, fontSize: FontSizeManger.s12),
+
+    ),
 
     /// input decoration theme (text form field)
     inputDecorationTheme: InputDecorationTheme(
