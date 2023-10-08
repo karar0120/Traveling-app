@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tut_app/app/constance.dart';
 import 'package:tut_app/presentation/common/state_renderer/state_renderer.dart';
-import 'package:tut_app/presentation/resources/Strings_Manger.dart';
+
+import '../../resources/strings_manger.dart';
 
 abstract class StateFlow {
   StateRendererType getStateRendererType();
@@ -17,7 +19,7 @@ class LoadingState extends StateFlow {
       {required this.stateRendererType, this.message = AppString.loading});
 
   @override
-  String getMessage() => message ?? AppString.loading;
+  String getMessage() => message ?? AppString.loading.tr();
 
   @override
   StateRendererType getStateRendererType() => stateRendererType;
@@ -124,7 +126,7 @@ extension StateFlowExtension on StateFlow {
           showPopUp(
               context, StateRendererType.popupSuccessState,
               getMessage(),
-              title : AppString.success);
+              title : AppString.success.tr());
           // return content ui of the screen
           return contentScreenWidget;
         }

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:tut_app/app/di.dart';
@@ -7,9 +8,9 @@ import 'package:tut_app/presentation/resources/Color_Manger.dart';
 import 'package:tut_app/presentation/resources/values_manger.dart';
 
 import '../../../app/app_prefs.dart';
-import '../../resources/Strings_Manger.dart';
 import '../../resources/image_manger.dart';
 import '../../resources/routes_manger.dart';
+import '../../resources/strings_manger.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -90,11 +91,11 @@ class _LoginViewState extends State<LoginView> {
                       keyboardType: TextInputType.emailAddress,
                       controller: _useNameTextEditingController,
                       decoration: InputDecoration(
-                        hintText: AppString.username,
-                        labelText: AppString.username,
+                        hintText: AppString.username.tr(),
+                        labelText: AppString.username.tr(),
                         errorText: (snapShot.data ?? true)
                             ? null
-                            : AppString.usernameError,
+                            : AppString.usernameError.tr(),
                       ),
                     );
                   },
@@ -113,11 +114,11 @@ class _LoginViewState extends State<LoginView> {
                       keyboardType: TextInputType.visiblePassword,
                       controller: _passwordTextEditingController,
                       decoration: InputDecoration(
-                        hintText: AppString.password,
-                        labelText: AppString.password,
+                        hintText: AppString.password.tr(),
+                        labelText: AppString.password.tr(),
                         errorText: (snapShot.data ?? true)
                             ? null
-                            : AppString.passwordError,
+                            : AppString.passwordError.tr(),
                       ),
                     );
                   },
@@ -141,7 +142,7 @@ class _LoginViewState extends State<LoginView> {
                                   loginViewModel.login();
                                 }
                               : null,
-                          child: const Text(AppString.login)),
+                          child:  Text(AppString.login.tr())),
                     );
                   },
                 ),
@@ -160,7 +161,7 @@ class _LoginViewState extends State<LoginView> {
                             context, Routes.forgetPasswordRoute);
                       },
                       child: Text(
-                        AppString.forgetPassword,
+                        AppString.forgetPassword.tr(),
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                     ),
@@ -170,7 +171,7 @@ class _LoginViewState extends State<LoginView> {
                             context, Routes.registerRoute);
                       },
                       child: Text(
-                        AppString.registerText,
+                        AppString.registerText.tr(),
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                     )

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:tut_app/presentation/resources/Color_Manger.dart';
@@ -6,7 +7,7 @@ import 'package:tut_app/presentation/resources/style_manger.dart';
 import 'package:tut_app/presentation/resources/values_manger.dart';
 
 import '../../resources/Fonts_Manger.dart';
-import '../../resources/Strings_Manger.dart';
+import '../../resources/strings_manger.dart';
 
 enum StateRendererType {
   ///popup State
@@ -29,7 +30,7 @@ class StateRenderer extends StatelessWidget {
   final String title;
   final Function retryActionFunction;
 
-  const StateRenderer({
+   StateRenderer({
     super.key,
     required this.stateRendererType,
     this.message = AppString.loading,
@@ -52,14 +53,14 @@ class StateRenderer extends StatelessWidget {
        return _getPopUpDialog(context,[
           _getAnimatedImage(JsonAssets.error),
           _getMessage(message),
-          _getRetryButton(AppString.ok,context)
+          _getRetryButton(AppString.ok.tr(),context)
         ]);
       case StateRendererType.popupSuccessState:
         return _getPopUpDialog(context,[
           _getAnimatedImage(JsonAssets.success),
           _getMessage(title),
           _getMessage(message),
-          _getRetryButton(AppString.ok,context)
+          _getRetryButton(AppString.ok.tr(),context)
         ]);
       case StateRendererType.fullScreenLoadingState:
        return _getItemColumn([

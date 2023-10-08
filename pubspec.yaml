@@ -54,6 +54,8 @@ dependencies:
   image_picker: ^1.0.4
   rxdart: ^0.27.7
   carousel_slider: ^4.2.1
+  easy_localization: ^3.0.3
+  flutter_phoenix: ^1.0.0
 
 
 dev_dependencies:
@@ -86,6 +88,8 @@ flutter:
     - assets/images/splash_logo.png
     - assets/images/
     - assets/json/
+    - assets/translations/ar-SA.json
+    - assets/translations/en-US.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
