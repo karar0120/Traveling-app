@@ -1,10 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tut_app/app/di.dart';
 import 'package:tut_app/presentation/forget_password/view_model/forget_password_view_model.dart';
 
 import '../../common/state_renderer/state_renderer_imp.dart';
-import '../../resources/Strings_Manger.dart';
 import '../../resources/image_manger.dart';
+import '../../resources/strings_manger.dart';
 import '../../resources/values_manger.dart';
 
 class ForgetPassword extends StatefulWidget {
@@ -77,11 +78,11 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       keyboardType: TextInputType.emailAddress,
                       controller: _emailTextEditingController,
                       decoration: InputDecoration(
-                        hintText: AppString.emailHint,
-                        labelText: AppString.emailHint,
+                        hintText: AppString.emailHint.tr(),
+                        labelText: AppString.emailHint.tr(),
                         errorText: (snapShot.data ?? true)
                             ? null
-                            : AppString.emailError,
+                            : AppString.invalidEmail.tr(),
                       ),
                     );
                   },
@@ -108,7 +109,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                             forgetPasswordViewModel.forgetPassword();
                           }
                               : null,
-                          child: const Text(AppString.resetPassword)),
+                          child:  Text(AppString.resetPassword.tr())),
                     );
                   },
                 ),

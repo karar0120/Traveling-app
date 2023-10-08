@@ -1,15 +1,16 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tut_app/app/app_prefs.dart';
 import 'package:tut_app/domain/model/model.dart';
 import 'package:tut_app/presentation/resources/Color_Manger.dart';
-import 'package:tut_app/presentation/resources/Strings_Manger.dart';
 import 'package:tut_app/presentation/resources/constants_manger.dart';
 import 'package:tut_app/presentation/resources/image_manger.dart';
 import 'package:tut_app/presentation/resources/values_manger.dart';
 import '../../../app/di.dart';
 import '../../resources/routes_manger.dart';
+import '../../resources/strings_manger.dart';
 import '../view_model/on_boarding_view_model.dart';
 
 class OnBoardingView extends StatefulWidget {
@@ -81,7 +82,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     Navigator.pushReplacementNamed(context, Routes.loginRoute);
                   },
                   child: Text(
-                    AppString.skip,
+                    AppString.skip.tr(),
                     style: Theme.of(context).textTheme.titleMedium,
                     textAlign: TextAlign.end,
                   ),

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:tut_app/data/network/failure.dart';
 
-import '../../presentation/resources/Strings_Manger.dart';
+import '../../presentation/resources/strings_manger.dart';
 
 class ErrorHandler implements Exception {
 

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tut_app/presentation/main/pages/home/view/home_page.dart';
 import 'package:tut_app/presentation/main/pages/notification/view/notification_page.dart';
@@ -5,8 +6,7 @@ import 'package:tut_app/presentation/main/pages/search/view/search_page.dart';
 import 'package:tut_app/presentation/main/pages/settings/view/settings_page.dart';
 import 'package:tut_app/presentation/resources/Color_Manger.dart';
 import 'package:tut_app/presentation/resources/values_manger.dart';
-
-import '../resources/Strings_Manger.dart';
+import '../resources/strings_manger.dart';
 
 class MainView extends StatefulWidget {
   const MainView({Key? key}) : super(key: key);
@@ -23,12 +23,12 @@ class _MainViewState extends State<MainView> {
     const SettingsPage(),
   ];
   final List<String> _titles=[
-    AppString.home,
-    AppString.search,
-    AppString.notification,
-    AppString.settings,
+    AppString.home.tr(),
+    AppString.search.tr(),
+    AppString.notifications.tr(),
+    AppString.settings.tr(),
   ];
- String _title = AppString.home;
+ String _title = AppString.home.tr();
 int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -48,11 +48,11 @@ int _currentIndex = 0;
           unselectedItemColor: ColorManger.gray,
           currentIndex: _currentIndex,
           onTap: onTap,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home_outlined),label: AppString.home),
-            BottomNavigationBarItem(icon: Icon(Icons.search),label: AppString.search),
-            BottomNavigationBarItem(icon: Icon(Icons.notifications),label: AppString.notification),
-            BottomNavigationBarItem(icon: Icon(Icons.settings),label: AppString.settings),
+          items:  [
+            BottomNavigationBarItem(icon: const Icon(Icons.home_outlined),label: AppString.home.tr()),
+            BottomNavigationBarItem(icon: const Icon(Icons.search),label: AppString.search.tr()),
+            BottomNavigationBarItem(icon: const Icon(Icons.notifications),label: AppString.notifications.tr()),
+            BottomNavigationBarItem(icon: const Icon(Icons.settings),label: AppString.settings.tr()),
           ],
         ),
       ),

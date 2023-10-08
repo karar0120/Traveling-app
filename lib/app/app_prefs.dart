@@ -1,5 +1,7 @@
 
 
+import 'dart:ui';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../presentation/resources/language_manger.dart';
@@ -23,6 +25,29 @@ class AppPreferences {
       return LanguageType.ENGLISH.getValue();
     }
   }
+  Future<void> changeAppLanguage() async {
+    String currentLang = await getAppLanguage();
+
+    if (currentLang == LanguageType.ARABIC.getValue()) {
+      // set english
+      sharedPreferences.setString(
+          PREFS_KEY_LANG, LanguageType.ENGLISH.getValue());
+    } else {
+      // set arabic
+      sharedPreferences.setString(
+          PREFS_KEY_LANG, LanguageType.ARABIC.getValue());
+    }
+  }
+
+  Future<Locale> getLocal() async {
+    String currentLang = await getAppLanguage();
+
+    if (currentLang == LanguageType.ARABIC.getValue()) {
+      return ARABIC_LOCAL;
+    } else {
+      return ENGLISH_LOCAL;
+    }
+  }
 
   ///on boarding
 
@@ -43,6 +68,10 @@ class AppPreferences {
 
   Future <bool>isUserLoginIn()async{
     return sharedPreferences.getBool(PREFS_KEY_IS_USER_LOGGED_IN)??false;
+  }
+
+  Future<void> logout() async {
+    sharedPreferences.remove(PREFS_KEY_IS_USER_LOGGED_IN);
   }
 
 }

@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:tut_app/presentation/resources/Strings_Manger.dart';
+import '../../../../resources/strings_manger.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({super.key});
@@ -11,8 +12,8 @@ class NotificationPage extends StatefulWidget {
 class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(AppString.notification),
+    return  Center(
+      child: Text(AppString.notifications.tr()),
     );
   }
 }

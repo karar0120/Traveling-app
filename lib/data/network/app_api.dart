@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:tut_app/app/constance.dart';
@@ -33,4 +35,9 @@ abstract class AppServiceClient {
 
   @GET(Constance.pathHome)
   Future<HomeResponse> home();
+
+  @GET(Constance.pathStoreDetails)
+  Future<StoreDetailsResponse> getStoreDetails();
+
+
 }

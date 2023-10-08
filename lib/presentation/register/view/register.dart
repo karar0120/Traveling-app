@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -13,9 +14,9 @@ import 'package:tut_app/presentation/resources/Color_Manger.dart';
 import 'package:tut_app/presentation/resources/values_manger.dart';
 
 import '../../../app/app_prefs.dart';
-import '../../resources/Strings_Manger.dart';
 import '../../resources/image_manger.dart';
 import '../../resources/routes_manger.dart';
+import '../../resources/strings_manger.dart';
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
 
@@ -115,8 +116,8 @@ class _RegisterState extends State<Register> {
                      keyboardType: TextInputType.name,
                      controller: _userNameTextEditingController,
                      decoration: InputDecoration(
-                       hintText: AppString.username,
-                       labelText: AppString.username,
+                       hintText: AppString.username.tr(),
+                       labelText: AppString.username.tr(),
                        errorText: snapShot.data
                      ),
                    );
@@ -154,8 +155,8 @@ class _RegisterState extends State<Register> {
                              keyboardType: TextInputType.phone,
                              controller: _mobileNumberTextEditingController,
                              decoration: InputDecoration(
-                                 hintText: AppString.mobileNumber,
-                                 labelText: AppString.mobileNumber,
+                                 hintText: AppString.mobileNumber.tr(),
+                                 labelText: AppString.mobileNumber.tr(),
                                  errorText: snapShot.data
                              ),
                            );
@@ -177,8 +178,8 @@ class _RegisterState extends State<Register> {
                      keyboardType: TextInputType.emailAddress,
                      controller: _emailTextEditingController,
                      decoration: InputDecoration(
-                         hintText: AppString.emailHint,
-                         labelText: AppString.emailHint,
+                         hintText: AppString.emailHint.tr(),
+                         labelText: AppString.emailHint.tr(),
                          errorText: snapShot.data
                      ),
                    );
@@ -198,8 +199,8 @@ class _RegisterState extends State<Register> {
                      keyboardType: TextInputType.visiblePassword,
                      controller: _passwordTextEditingController,
                      decoration: InputDecoration(
-                       hintText: AppString.password,
-                       labelText: AppString.password,
+                       hintText: AppString.password.tr(),
+                       labelText: AppString.password.tr(),
                        errorText: snapShot.data
                      ),
                    );
@@ -246,7 +247,7 @@ class _RegisterState extends State<Register> {
                            registerViewModel.register();
                          }
                              : null,
-                         child: const Text(AppString.register)),
+                         child:  Text(AppString.register.tr())),
                    );
                  },
                ),
@@ -261,7 +262,7 @@ class _RegisterState extends State<Register> {
                    Navigator.of(context).pop();
                  },
                  child: Text(
-                   AppString.alreadyHaveAccount,
+                   AppString.alreadyHaveAccount.tr(),
                    style: Theme.of(context).textTheme.titleMedium,
                  ),
                )
@@ -279,7 +280,7 @@ class _RegisterState extends State<Register> {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Flexible(child: Text(AppString.profilePicture)),
+         Flexible(child: Text(AppString.profilePicture.tr())),
         Flexible(child: StreamBuilder<File>(
           stream: registerViewModel.outputProfilePicture,
           builder: (context,snapshot){
@@ -308,7 +309,7 @@ class _RegisterState extends State<Register> {
               ListTile(
                 trailing: const Icon(Icons.arrow_forward),
                 leading: const Icon(Icons.camera),
-                title: const Text(AppString.photoGallery),
+                title:  Text(AppString.photoGallery.tr()),
                 onTap: (){
                   _imageFromGallery();
                   Navigator.of(context).pop();
@@ -317,7 +318,7 @@ class _RegisterState extends State<Register> {
               ListTile(
                 trailing: const Icon(Icons.arrow_forward),
                 leading: const Icon(Icons.camera_alt_outlined),
-                title: const Text(AppString.photoCamera),
+                title:  Text(AppString.photoCamera.tr()),
                 onTap: (){
                   _imageFromCamera();
                   Navigator.of(context).pop();

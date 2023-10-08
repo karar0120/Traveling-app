@@ -1,10 +1,10 @@
 import 'dart:async';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:tut_app/domain/model/model.dart';
 import 'package:tut_app/presentation/base/base_view_model.dart';
-
-import '../../resources/Strings_Manger.dart';
 import '../../resources/image_manger.dart';
+import '../../resources/strings_manger.dart';
 
 class OnBoardingViewModel extends BaseViewModel implements OnBoardingViewModelInput,OnBoardingViewModelOutput{
 
@@ -58,14 +58,14 @@ class OnBoardingViewModel extends BaseViewModel implements OnBoardingViewModelIn
 
 
   List<SliderObject> _getSliderData() => [
-    const SliderObject(AppString.onBoardingTitle1,
-        AppString.onBoardingSubTitle1, ImageManger.onBoarding1),
-    const SliderObject(AppString.onBoardingTitle2,
-        AppString.onBoardingSubTitle2, ImageManger.onBoarding2),
-    const SliderObject(AppString.onBoardingTitle3,
-        AppString.onBoardingSubTitle3, ImageManger.onBoarding3),
-    const SliderObject(AppString.onBoardingTitle4,
-        AppString.onBoardingSubTitle4, ImageManger.onBoarding4),
+     SliderObject(AppString.onBoardingTitle1.tr(),
+        AppString.onBoardingSubTitle1.tr(), ImageManger.onBoarding1),
+     SliderObject(AppString.onBoardingTitle2.tr(),
+        AppString.onBoardingSubTitle2.tr(), ImageManger.onBoarding2),
+     SliderObject(AppString.onBoardingTitle3.tr(),
+        AppString.onBoardingSubTitle3.tr(), ImageManger.onBoarding3),
+     SliderObject(AppString.onBoardingTitle4.tr(),
+        AppString.onBoardingSubTitle4.tr(), ImageManger.onBoarding4),
   ];
 
   void _postDataToView(){

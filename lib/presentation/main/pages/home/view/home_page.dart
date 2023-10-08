@@ -1,14 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tut_app/app/di.dart';
 import 'package:tut_app/presentation/common/state_renderer/state_renderer_imp.dart';
 import 'package:tut_app/presentation/main/pages/home/view_model/home_view_model.dart';
-import 'package:tut_app/presentation/resources/Strings_Manger.dart';
 import 'package:tut_app/presentation/resources/routes_manger.dart';
 import 'package:tut_app/presentation/resources/values_manger.dart';
 
 import '../../../../../domain/model/model.dart';
 import '../../../../resources/Color_Manger.dart';
+import '../../../../resources/strings_manger.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -56,9 +57,9 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _getBannerWidget(banner: snapshot.data?.banners),
-              _getSection(title: AppString.service),
+              _getSection(title: AppString.services.tr()),
               _getServicesWidget(services: snapshot.data?.services),
-              _getSection(title: AppString.store),
+              _getSection(title: AppString.stores.tr()),
               _getStoresWidget(store: snapshot.data?.stores),
             ],
           );
